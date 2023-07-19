@@ -1,18 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
- * main - Prints _putchar, followed by a new line
+ * main - Entry point
  *
- * Return: Always 0
+ * Return: 0 Always success
  */
+
 int main(void)
 {
-	char *a = "_putchar\n";
 
-	while (*a)
-	{
-		putchar(*a);
-		a++;
-	}
+	printf("_putchar\n");
+
 	return (0);
 }
-
