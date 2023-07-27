@@ -15,10 +15,10 @@ char *_strncat(char *dest, char *src, int n)
 	dest++;
 
 	while (n && *src)
-		*dest++ = *src++;
+	*dest++ = *src++;
 	n--;
 
 	*dest = '\0';
 
-	return (temp);
+	return (dest);
 }
