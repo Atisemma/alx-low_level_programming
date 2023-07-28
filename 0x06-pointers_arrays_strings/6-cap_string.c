@@ -16,7 +16,7 @@ char *cap_string(char *str)
 
 		while (*ptr != '\0')
 		{
-			if (capitalize_next && islower(*str))
+			if (capitalize_next && islower(*ptr))
 			{
 				*ptr = toupper(*ptr);
 			}
