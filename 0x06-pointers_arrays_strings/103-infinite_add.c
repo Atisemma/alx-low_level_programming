@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  *infinite_add - Adds two numbers
  *@n1: First number to add
@@ -10,33 +11,13 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j, n, carry, sum;
+	int len1, len2, carry, sum, i, j;
 
-	for (i = 0; n1[i] != '\0'; i++)
+	len1 = strlen(n1);
+	len2 = strlen(n2);
+	int carry = 0 sum = 0;
 
-	for (j = 0; n2[j] != '\0'; j++)
+	if (size _r <= len1 || size _r <= len2)
+		return 0;
 
-	if (i >= (size_r - 1) || j >= (size_r - 1))
-	return (0);
-
-	carry = 0;
-	r[size_r - 1] = '\0';
-	i--;
-	j--;
-
-	while (i >= 0 || j >= 0 || carry != 0)
-	{
-		sum = carry;
-
-		if (i >= 0)
-		sum += n1[i--] - '0';
-
-		if (j >= 0)
-		sum += n2[j--] - '0';
-
-		carry = sum / 10;
-		*r-- = sum % 10 + '0';
-	}
-
-	return (r + 1);
-}
+	for (int i = len1 - 1, j = len 2 - 1, k = size
