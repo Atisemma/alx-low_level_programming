@@ -11,9 +11,6 @@ int checker(char *s, int start, int end)
 {
 	int len = (0);
 
-	while (s[len] != '\0')
-	len++;
-
 	if (start == end)
 		return (1);
 	if (s[start] != s[end])
