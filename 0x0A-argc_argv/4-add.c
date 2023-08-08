@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		if (!checker(argv[1]))
+		if (checker(argv[1]))
 		{
 			printf("error\n");
 			return (1);
