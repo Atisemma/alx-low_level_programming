@@ -18,7 +18,6 @@ int checker(char *str)
 	}
 	return (1);
 }
-
 /**
  * main - adds positive numbers
  * @argc: argument count
@@ -37,7 +36,7 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		if (checker(argv[1]))
+		if (!checker(argv[1]))
 		{
 			printf("error\n");
 			return (1);
@@ -46,5 +45,4 @@ int main(int argc, char **argv)
 	}
 	printf("%d\n", sum);
 	return (0);
-
 }
