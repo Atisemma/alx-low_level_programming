@@ -7,7 +7,7 @@
  * @argv: argument vector
  * Return: 0 on success, 1 on error
  */
-int main(int argc, char **argv[])
+int main(int argc, char *argv[])
 {
 	int cents, coins = 0;
 
@@ -34,10 +34,10 @@ int main(int argc, char **argv[])
 			cents -= 5;
 		if (cents >= 2)
 			cents -= 2;
-		else
-			cents--;
+		if (cents >= 1)
+			cents -= 1;
 
-		coins;
+		coins++;
 	}
 	printf("%d\n", coins);
 	return (0);
