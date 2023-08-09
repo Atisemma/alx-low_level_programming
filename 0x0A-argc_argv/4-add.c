@@ -2,47 +2,27 @@
 #include <stdlib.h>
 #include <ctype.h>
 /**
- * checker - checks if the given string is a positive number
- * @str: string to be checked
- * Return: 1 if it is a positive number, 0 otherwise
- */
-int checker(char *str)
-{
-	int i = 0;
-
-	while (str[i] != '\0')
-	{
-		if (!isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-/**
  * main - adds positive numbers
- * @argc: argument count
  * @argv: argument vector
- * Return: 0 on success, 1 on error
- */
-int main(int argc, char **argv)
+ * @argc: argument count
+ * Return: 0 for success, 1 for symbol
+*/
+int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int a, b, add = 0;
 
-	if (argc == 1)
+	for (a = 1; a < argc; a++)
 	{
-		printf("0\n");
-		return (0);
-	}
-
-	for (i = 1; i < argc; i++)
-	{
-		if (!checker(argv[1]))
+		for (b = 0; argv[a][b] != '\0'; b++)
 		{
-			printf("error\n");
-			return (1);
+			if (!isdigit(argv[a][b]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		sum += atoi(argv[i]);
+		add += atoi(argv[a]);
 	}
-	printf("%d\n", sum);
+	printf("%d\n", add);
 	return (0);
 }
