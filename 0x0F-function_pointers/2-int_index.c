@@ -29,7 +29,7 @@ int int_index(int *array, int size, int (*cmp)(int))
  * cmp_function - compare function used to search for the integer 2
  * @value: input to be compared
  *
- * Return: if the value is not 2, othersise non-zero
+ * Return: 0 if the value is not 2, othersise non-zero
  */
 int cmp_function(int value)
 {
