@@ -10,38 +10,37 @@ void print_all(const char * const format, ...)
 	int i;
 	float f;
 	char *s;
-	int index = 0;
+	int formatIndex = 0;
 
 	va_start(args, format);
 
-	while (format[index] != '\0')
+	while (format[formatIndex] != '\0')
 	{
-		switch (format[index])
+		if (format[formatIndex] == 'c')
+			c = (char)va_arg(args, int);
+		printf("%c", c);
+		if (format[formatIndex] == 'i')
+			i = va_arg(args, int);
+		printf("%d", i);
+		if (format[formatIndex] == 'f')
+			f = (float)va_arg(args, double);
+		printf("%f", f);
+		if (format[formatIndex] == 's')
 		{
-			case 'c':
-				c = va_arg(args, int);
-				printf("%c", c);
-				break;
-			case 'i':
-				i = va_arg(args, int);
-				printf("%d", i);
-				break;
-			case 'f':
-				f = va_arg(args, double);
-				printf("%f", f);
-				break;
-			case 's':
-				s = va_arg(args, char *);
+			s = va_arg(args, char *);
 			if (s == NULL)
+			{
 				printf("(nil)");
+			}
 			else
+			{
 				printf("%s", s);
-			break;
-		default:
-			break;
+			}
 		}
-		index++;
+
+		formatIndex++;
 	}
+
 	va_end(args);
 	printf("\n");
 }
