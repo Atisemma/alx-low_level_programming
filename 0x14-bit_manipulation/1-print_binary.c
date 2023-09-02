@@ -8,26 +8,21 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int mask = 1;
-	int bits = sizeof(n) * 8 - 1;
-	int flag = 0;
+	int size = sizeof(n) * 8;
+	int i;
 
-	if (n == 0)
+	for (i = size - 1; i >= 0; i--)
 	{
-		_putchar ('0');
-		return;
+	if ((n >> i) & 1)
+		break;
 	}
 
-	mask << bits;
-
-	while (mask != 0)
+	for (; i >= 0; i--)
 	{
-		if ((n & mask) != 0)
-		{
-			flag = 1;
-		}
-		else if (flag == 1)
-			_putchar('0');
-
-		mask >>= 1;
+		mask = mask << i;
+		if ((n & mask) >> i)
+			_putchar ('1');
+		else
+			_putchar ('0');
 	}
 }
