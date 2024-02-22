@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""defines an island perimeter measuring function."""
+
 
 def island_perimeter(grid):
-    """
-    Calculates the perimeter of the island described in the grid.
+    """Calculates the perimeter of the island described in the grid.
 
     Args:
     - grid (list of list of int): Represents the island grid.
