@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 /**
- *
+ * struct listint_s - A structure representing a node in a singly linked list
  * @n: Integer
  * @index: Index of the node in the list
  * @next: Pointer to the next node
